@@ -1,7 +1,7 @@
 package com.ivoronline.springboot_db_query_jpql_projection_interface_child.controllers;
 
-import com.ivoronline.springboot_db_query_jpql_projection_interface_child.entities.AddressView;
-import com.ivoronline.springboot_db_query_jpql_projection_interface_child.entities.PersonView;
+import com.ivoronline.springboot_db_query_jpql_projection_interface_child.entities.AddressProjection;
+import com.ivoronline.springboot_db_query_jpql_projection_interface_child.entities.PersonProjection;
 import com.ivoronline.springboot_db_query_jpql_projection_interface_child.repositories.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,13 +13,13 @@ public class MyController {
   @Autowired PersonRepository personRepository;
 
   //================================================================
-  // RETURN PERSON VIEW
+  // RETURN PERSON PROJECTION
   //================================================================
-  @RequestMapping("ReturnPersonView")
-  AddressView returnPersonView() {
-    PersonView  personView = personRepository.returnPersonView();
-    AddressView address    = personView.getAddress();
-    return      address;
+  @RequestMapping("ReturnPersonProjection")
+  AddressProjection returnPersonProjection() {
+    PersonProjection  personProjection = personRepository.returnPersonProjection();
+    AddressProjection addressProjection    = personProjection.getAddress();
+    return addressProjection;
   }
 
 }

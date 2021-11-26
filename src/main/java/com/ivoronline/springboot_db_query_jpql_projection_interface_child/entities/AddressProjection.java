@@ -1,7 +1,6 @@
 package com.ivoronline.springboot_db_query_jpql_projection_interface_child.entities;
 
-// Interface can only have Methods. It can't have Properties/State.
-public interface AddressView {
+public interface AddressProjection {
   String getCity();
   String getStreet();
 }
